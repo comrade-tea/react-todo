@@ -1,6 +1,6 @@
 import {} from "redux-thunk";
 
-import {LOAD_ALL_TODOS, DELETE_TODO, ADD_TODO, COMPLETE_TODO} from "../constants";
+import {LOAD_ALL_TODOS, DELETE_TODO, ADD_TODO, TOGGLE_TODO} from "../constants";
 
 
 export function loadAllTodos(todos) {
@@ -19,9 +19,9 @@ export function addTodo(text) {
 	}
 }
 
-export function completeTodo(id) {
+export function toggleTodo(id) {
 	return {
-		type: COMPLETE_TODO,
+		type: TOGGLE_TODO,
 		payload: {id}
 	}
 }

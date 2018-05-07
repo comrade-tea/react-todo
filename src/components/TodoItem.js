@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from "react-redux";
-import {completeTodo} from "../AC/index";
+import {toggleTodo} from "../AC/index";
 
 
 class TodoItem extends Component {
@@ -17,9 +17,8 @@ class TodoItem extends Component {
 
 	handleComplete = () => {
 		const {todo} = this.props
-		console.log("----", todo.id)
 
-		this.props.completeTodo(todo.id)
+		this.props.toggleTodo(todo.id)
 	}
 
 	checkComplete() {
@@ -31,4 +30,4 @@ class TodoItem extends Component {
 
 TodoItem.propTypes = {};
 
-export default connect(null, {completeTodo})(TodoItem);
+export default connect(null, {toggleTodo})(TodoItem);

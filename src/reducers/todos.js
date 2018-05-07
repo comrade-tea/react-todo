@@ -1,14 +1,15 @@
-import {ADD_TODO, COMPLETE_TODO, DELETE_TODO, LOAD_ALL_TODOS} from "../constants";
+import {ADD_TODO, TOGGLE_TODO, DELETE_TODO, LOAD_ALL_TODOS} from "../constants";
 import {List} from "immutable";
 import {arrToMap} from "../helpers";
 
 
-export default (reducerState = new List(), action) => {
+export default (reducerState = [], action) => {
 	const {type, payload} = action
 
 	switch (type) {
 		case LOAD_ALL_TODOS:
-			return new List(payload.todos)
+			// return new List(payload.todos)
+			return arrToMap(payload.todos)
 
 		case ADD_TODO:
 			return reducerState.push({
@@ -17,8 +18,9 @@ export default (reducerState = new List(), action) => {
 				completed: false
 			})
 
-		case COMPLETE_TODO:
-			reducerState
+		case TOGGLE_TODO:
+			console.log("----", 'toggle')
+			return reducerState
 	}
 
 	return reducerState
