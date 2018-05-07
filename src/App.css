@@ -46,3 +46,7 @@
 	max-width: 400px;
 	text-align: left;
 }
+
+.completed {
+	color: red;
+}

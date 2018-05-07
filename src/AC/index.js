@@ -1,6 +1,6 @@
 import {} from "redux-thunk";
 
-import {LOAD_ALL_TODOS, DELETE_TODO, ADD_TODO, TOGGLE_TODO} from "../constants";
+import {LOAD_ALL_TODOS, DELETE_TODOS, ADD_TODO, TOGGLE_TODO} from "../constants";
 
 
 export function loadAllTodos(todos) {
@@ -26,6 +26,8 @@ export function toggleTodo(id) {
 	}
 }
 
-export function deleteTodo(id) {
-
+export function deleteTodos() {
+	return {
+		type: DELETE_TODOS
+	}
 }

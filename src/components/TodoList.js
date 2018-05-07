@@ -30,6 +30,6 @@ TodoList.propTypes = {};
 
 export default connect((state) => {
 	return {
-		todos: state.todos.toArray()
+		todos: state.todos.toSeq().toArray()
 	}
 }, {loadAllTodos})(TodoList);
