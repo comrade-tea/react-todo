@@ -9,7 +9,8 @@ class Header extends Component {
 		return (
 			<div className={'header'}>
 				<div className="header__title">TODO list</div>
-				<button onClick={this.handleDelete}>delete competed</button>
+
+				<button onClick={this.handleDelete}><i className="mdi mdi-delete"></i></button>
 			</div>
 		);
 	}

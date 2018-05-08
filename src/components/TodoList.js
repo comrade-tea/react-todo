@@ -19,10 +19,15 @@ class TodoList extends Component {
 		})
 
 		return (
-			<ul>
+			<ul className="card card-body">
+				{this.handleEmpty(todosList)}
 				{todosList}
 			</ul>
 		);
+	}
+
+	handleEmpty(array) {
+		if (!array.length) return <li><em>nothing to show!</em></li>
 	}
 }
 

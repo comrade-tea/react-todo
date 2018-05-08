@@ -30,10 +30,21 @@
 		transform: rotate(360deg);
 	}
 }
+/********************/
+ul, ol {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+ul li:nth-child(1n+2) {
+	margin-top: 10px;
+}
 
 .header {
-	background: darkgrey;
+	background: #d6d6d6;
 	padding: 10px;
+	display: flex;
+	justify-content: space-between;
 }
 
 .container {
@@ -49,4 +60,16 @@
 
 .completed {
 	color: red;
+}
+
+.noselect {
+	user-select: none
+}
+
+button {
+	cursor: pointer;
+}
+
+.todo-item {
+	cursor: pointer;
 }

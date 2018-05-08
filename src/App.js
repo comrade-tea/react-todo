@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 import logo from './logo.svg';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import TodoApp from "./components/TodoApp";
+import './MaterialDesign-Webfont-master/css/materialdesignicons.min.css'
+import TodoApp from "./components/TodoApp"
 import {Provider} from "react-redux";
 import store from './store/store'
 

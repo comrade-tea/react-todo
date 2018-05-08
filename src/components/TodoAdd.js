@@ -6,33 +6,44 @@ import {addTodo} from "../AC";
 
 class TodoAdd extends Component {
 	state = {
-		newTodo: ''
+		newTodo: '',
+		isValid: true
 	}
 
 	render() {
 		return (
 			<div>
-				<form onSubmit={this.handleAdd}>
-					<button type={'submit'}>add todo</button>
-					<input type={'text'} onChange={this.handleInput} value={this.state.newTodo}
+				<form className="input-group" onSubmit={this.handleAdd}>
+					<button type={'submit'}><i className="mdi mdi-plus"></i></button>
+					<input className={`form-control ${this.checkValid()}`} type={'text'} onChange={this.handleInput}
+					       value={this.state.newTodo}
 					       placeholder={'todo text..'}/></form>
 			</div>
 		);
 	}
 
+	checkValid() {
+		if (this.state.isValid) return ''
+		return 'border-danger'
+	}
 
 	handleAdd = ev => {
 		ev.preventDefault()
 
-		if (this.state.newTodo.length) {
-			this.props.addTodo(this.state.newTodo)
-			this.setState({newTodo: ''})
+		if (this.state.newTodo.trim().length > 3) {
+			this.props.addTodo(this.state.newTodo.trim())
+			this.setState({newTodo: '', isValid: true})
+		}
+		else {
+			this.setState({isValid: false})
 		}
 	}
 
 	handleInput = ev => {
 		const {value} = ev.target;
 		this.setState({newTodo: value})
+
+		if (this.state.newTodo.trim().length > 3) this.setState({isValid: true})
 	}
 }
 

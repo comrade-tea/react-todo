@@ -1,5 +1,3 @@
-import {} from "redux-thunk";
-
 import {LOAD_ALL_TODOS, DELETE_TODOS, ADD_TODO, TOGGLE_TODO} from "../constants";
 
 
